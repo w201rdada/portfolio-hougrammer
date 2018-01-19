@@ -11,9 +11,11 @@ Mechanical engineers can be seen as glorified jigsaw puzzle solvers.  Often time
 ## A middle.
 
 Being one of the oldest professions in one incarnation or another, engineering lacks no prior amount of design.  And with the advent and proliferation of computer aided design (CAD), pen and paper have become 1s and 0s.  When I have to design a fixture to move a box of length L, width W, and height H through over a distance of D, another fellow mechanical engineer has almost surely completed a similar problem already.  If MEs gave each design a classification for use with a supervised learning algorithm, we can start building an algorithm to solve common problems.
+
 * Need to bolt two pieces of sheet metal together?  Let the algorithm select a bolt pattern and the proper size hardware.
 * Need to get water between inlet and outlet manifolds?  Let the algorithm choose the correct tubing and route it for you
 * Want to design a sleek electric car that is envy of all automotive companies?  Elon Musk beat you to that one, but it doesn't hurt to consult the algorithm for the subsystems anyways.
+
 Of course, the real strength in a machine learning lies not in its ability to recommend previous designs (there are in fact already repositories of information for mechanical design).  The real power lies in the ability to learn and adapt to each engineer's tastes and needs.  If you do not like a design that the algorithm outputs, tell it where it went wrong and let it recalculate a solution.  Preliminary designs may be pushing square pegs into round holes, but the evolution of a neural network could eventually redefine both the pegs and holes into star shapes.
 ## An end.
 
