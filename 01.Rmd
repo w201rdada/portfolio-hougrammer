@@ -1,17 +1,20 @@
-# Sanitizing Engineering Data {#slug-one}
+# Using Machine Learning for Mechanical Design {#slug-one}
 
 #### Keywords {-}
 
-For saving data scientists from headaches later
+Augmenting the mechanical engineering workflow
 
 ## A beginning.
 
-Often times, data coming from research & development projects are littered poor formatting and random notes.  Whether performed by a dedicated data analyst or the original engineer, sanitation of the data is required before it is of much use.
+Mechanical engineers can be seen as glorified jigsaw puzzle solvers.  Often times, our job is to take near infinite number of puzzle pieces in existence and put them together in a way that is not only functionally useful but cost-effective.  Our puzzle pieces can be as simple as screw; as complex as a space ship.  If we're lucky, things fit together nicely and no pieces are missing from the box.  More likely, we have craft our own pieces, thus the "design" portion of mechanical design.  Perhaps machine learning can be of use to us here.
 
 ## A middle.
 
-Whether by simply training them or by using standalone software, we need to help nudge engineers in correct direction of taking clean data from the very beginning.  Disallow the hodgepodge of Excel tables, littered with incorrect data types and arbitrary text notes.  We want clean sets of data that can be easily loaded and analyzed.
-
+Being one of the oldest professions in one incarnation or another, engineering lacks no prior amount of design.  And with the advent and proliferation of computer aided design (CAD), pen and paper have become 1s and 0s.  When I have to design a fixture to move a box of length L, width W, and height H through over a distance of D, another fellow mechanical engineer has almost surely completed a similar problem already.  If MEs gave each design a classification for use with a supervised learning algorithm, we can start building an algorithm to solve common problems.
+* Need to bolt two pieces of sheet metal together?  Let the algorithm select a bolt pattern and the proper size hardware.
+* Need to get water between inlet and outlet manifolds?  Let the algorithm choose the correct tubing and route it for you
+* Want to design a sleek electric car that is envy of all automotive companies?  Elon Musk beat you to that one, but it doesn't hurt to consult the algorithm for the subsystems anyways.
+Of course, the real strength in a machine learning lies not in its ability to recommend previous designs (there are in fact already repositories of information for mechanical design).  The real power lies in the ability to learn and adapt to each engineer's tastes and needs.  If you do not like a design that the algorithm outputs, tell it where it went wrong and let it recalculate a solution.  Preliminary designs may be pushing square pegs into round holes, but the evolution of a neural network could eventually redefine both the pegs and holes into star shapes.
 ## An end.
 
-Data collection (or at least the actions leading up to it) may take a bit longer in the beginning, but the return on time investment will show quickly, when engineers can start producing better reports with smaller effort.
+Getting such a machine learning algorithm to a state where it can actually output useful mechanical designs will obviously take some time.  There will be some growing pains, as mechanical engineers learn to deal with the added requirements of detailing their design intent not only to their managers but to a computer as well-and the latter often requires much more coddling.  However, I believe that the utility in such a system would greatly streamline an ME's workflow.  Can a singular engineer eventually design a space ship to Mars?  It's just rocket science after all.
