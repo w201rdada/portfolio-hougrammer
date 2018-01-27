@@ -6,7 +6,7 @@ mechanical engineering, computer aided design (CAD)
 
 ## The (Non)Software Engineer
 
-Mechanical engineers can be seen as glorified jigsaw puzzle solvers.  Often times, our job is to take near infinite number of puzzle pieces in existence and put them together in a way that is not only functionally useful but cost-effective.  Our puzzle pieces can be as simple as screw; as complex as a space ship.  If we're lucky, things fit together nicely and no pieces are missing from the box.  More likely, we have craft our own pieces, thus the "design" portion of mechanical design.  Perhaps machine learning can be of use to us here.
+Mechanical engineers can be seen as glorified jigsaw puzzle solvers.  Often times, our job is to take near an infinite number of puzzle pieces in existence and put them together in a way that is not only functionally useful but cost-effective.  Our puzzle pieces can be as simple as screw; as complex as a space ship.  If we're lucky, things fit together nicely and no pieces are missing from the box.  More likely, we have to craft our own pieces, thus the "design" portion of mechanical design.  Perhaps machine learning can be of use to us here.
 
 ## Teaching Old Dogs New Tricks
 
@@ -16,7 +16,9 @@ Being one of the oldest professions in one incarnation or another, engineering l
 * Need to get water between inlet and outlet manifolds?  Let the algorithm choose the correct tubing and route it for you
 * Want to design a sleek electric car that is envy of all automotive companies?  Elon Musk beat you to that one, but it doesn't hurt to consult the algorithm for the subsystems anyways.
 
-Of course, the real strength in a machine learning lies not in its ability to recommend previous designs (there are in fact already repositories of information for mechanical design).  The real power lies in the ability to learn and adapt to each engineer's tastes and needs.  If you do not like a design that the algorithm outputs, tell it where it went wrong and let it recalculate a solution.  Preliminary designs may be pushing square pegs into round holes, but the evolution of a neural network could eventually redefine both the pegs and holes into star shapes.
+Of course, the real strength in a machine learning lies not in its ability to recommend previous designs (there are in fact already repositories of information for mechanical design).  The real power lies in the ability to learn and adapt to each engineer's tastes and needs.  If you do not like a design that the algorithm outputs, tell it where it went wrong and let it recalculate a solution.  Preliminary designs may be pushing square pegs into round holes, but the evolution of a neural network could eventually redefine both the pegs and holes into shapes well beyond human imagination.
+
+The questions of how design communities can "effectively use the design data they generate to help manage their operations and improve their designs" is not a new one [@fuge_collaborative_2014].  Fuge describes machine learning within mechanical engineering design as "Computation Design Synthesis".  Perhaps, I've not much to add to the subject that the field has not thought of already, but I think the important here is one of adoption.  Going to work with many experienced (read older) MEs everyday, it is difficult enough to get them to stop using Internet Explorer, let alone adopt an entirely new design paradigm.
 
 ## The Paradigm Shift
 
