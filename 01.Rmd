@@ -4,7 +4,7 @@ output:
   html_document: default
 ---
 
-# Using Machine Learning for Mechanical Design {#From CAD Monkeys to CAD Robots}
+# Using Machine Learning for Mechanical Design {#slug-one}
 
 ```{r}
 knitr::include_graphics('img/evolution-of-design.jpg')
