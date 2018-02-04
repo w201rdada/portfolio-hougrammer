@@ -1,6 +1,6 @@
 # Using Machine Learning for Mechanical Design {#DeepCAD}
 
-```{r}
+```{r echo=FALSE}
 knitr::include_graphics('img/evolution-of-design.jpg')
 ```
 
@@ -18,7 +18,7 @@ In modern companies, virtually all mechanical design work is done with computer 
 
 To be clear, a machine learning algorithm is not a database of mechanical designs from which engineers select previously designed parts.  The strength of ML lies not in its ability to regurgitate previous inputs, but rather in its ability to solve new problems.  If the algorithm outputs a poor design, it can learn a better a solution.  Once a neural net has seen enough examples of a particular geometry, it could even propose solutions that the engineer hadn't even thought of.  Maybe putting hinges at the top of the door actually makes more sense than putting them on the side (a la gull-wing doors on the Tesla).  Maybe doors aren't even necessary as originally thought.
 
-```{r}
+```{r echo=FALSE}
 knitr::include_graphics('img/dilbert_architect_comic_cad_monkey.jpg')
 ```
 
