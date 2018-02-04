@@ -139,7 +139,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="DeepCAD" class="section level1">
 <h1>Using Machine Learning for Mechanical Design</h1>
-<p><img src="img/evolution-of-design.jpg" width="450" /></p>
+<p><img src="img/evolution-of-design.jpg" /><!-- --></p>
 <div id="keywords" class="section level4 unnumbered">
 <h4>Keywords</h4>
 <p>mechanical design, computer aided design, CAD, machine learning, classification learning, neural networks</p>
@@ -147,19 +147,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="the-nonsoftware-engineer" class="section level2">
 <h2>The (Non)Software Engineer</h2>
 <p>In many ways, mechanical engineers are just glorified jigsaw puzzle solvers. Their job is to take from a virtually infinite number of puzzle pieces and put them together in a functional and cost-effective way–often times having to craft missing pieces from scratch. However, puzzle pieces all look relatively similar. It would be great if MEs had access to a repository of known puzzle-piece shapes rather than having to create every one from scratch.</p>
-<p>In modern companies, virtually all mechanical design work is done with computer aided design (CAD) software. Thus, physical objects are codified in digital files (see STL for example <span class="citation">[@noauthor_stl_nodate]</span>). In what Anderson calls the “Petabyte Age” <span class="citation">[@anderson_end_2008]</span>, computing power is approaching the ability to train a neural network to recognize geometries from solid model files and classify them. If an algorithm notices that every “car” I design needs a component called a “door”, it can learn what a “door” is and propose a design for me. Time between concept and production falls precipitously, with fewer engineers required. The implications for business/engineering environments are huge.</p>
+<p>In modern companies, virtually all mechanical design work is done with computer aided design (CAD) software. Thus, physical objects are codified in digital files (see STL for example <span class="citation">(“STL (File Format) - Wikipedia” <a href="#ref-noauthor_stl_nodate">2018</a>)</span>). In what Anderson calls the “Petabyte Age” <span class="citation">(Anderson <a href="#ref-anderson_end_2008">2008</a>)</span>, computing power is approaching the ability to train a neural network to recognize geometries from solid model files and classify them. If an algorithm notices that every “car” I design needs a component called a “door”, it can learn what a “door” is and propose a design for me. Time between concept and production falls precipitously, with fewer engineers required. The implications for business/engineering environments are huge.</p>
 </div>
 <div id="the-paradigm-shift" class="section level2">
 <h2>The Paradigm Shift</h2>
 <p>To be clear, a machine learning algorithm is not a database of mechanical designs from which engineers select previously designed parts. The strength of ML lies not in its ability to regurgitate previous inputs, but rather in its ability to solve new problems. If the algorithm outputs a poor design, it can learn a better a solution. Once a neural net has seen enough examples of a particular geometry, it could even propose solutions that the engineer hadn’t even thought of. Maybe putting hinges at the top of the door actually makes more sense than putting them on the side (a la gull-wing doors on the Tesla). Maybe doors aren’t even necessary as originally thought.</p>
-<p><img src="img/dilbert_architect_comic_cad_monkey.jpg" width="364" /></p>
+<p><img src="img/dilbert_architect_comic_cad_monkey.jpg" /><!-- --></p>
 <p>Of course, the neural net’s capabilities must grow over time, lest we attempt to build Rome in a day. I propose some checkpoints along the way:</p>
 <ol style="list-style-type: decimal">
 <li>Component suggestion. The algorithm suggests previously designed components for use in the current design but actual implementation is left up to the engineer.</li>
 <li>Geometry suggestion. The algorithm suggests previously designed components as well as their geometry and layout in the current design.</li>
 <li>Design suggestion. The algorithm designs new geometry as a new solution for a specified problem.</li>
 </ol>
-<p>Level 1 is barely starting to emerge in some CAD packages, showing that development has already started on what Fuge calls “Computation Design Synthesis” <span class="citation">[@fuge_collaborative_2014]</span>. The above description of level 3 suggestion may not have been very elucidating, but it is also the hardest one to encapsulate. The idea of “design suggestion” can be extended almost ad infinitum. It is perceivable (albeit far-fetched with contemporary technology) that this algorithm could advance one day to the point where an engineer can simply say, “design me an electric car,” and receive drawings for something akin to a Tesla.</p>
+<p>Level 1 is barely starting to emerge in some CAD packages, showing that development has already started on what Fuge calls “Computation Design Synthesis” <span class="citation">(Fuge <a href="#ref-fuge_collaborative_2014">2014</a>)</span>. The above description of level 3 suggestion may not have been very elucidating, but it is also the hardest one to encapsulate. The idea of “design suggestion” can be extended almost ad infinitum. It is perceivable (albeit far-fetched with contemporary technology) that this algorithm could advance one day to the point where an engineer can simply say, “design me an electric car,” and receive drawings for something akin to a Tesla.</p>
 <p>Perhaps a more realistic goal is this: a paradigm shift from explicitly telling CAD software what to draw (dimensioned sketches followed by extrudes, revolves, and sweeps) to simply giving a top level goal and allowing the software to figure out the details. This is directly analogous to imperative versus functional programming languages.</p>
 <p>Current mechanical design:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">chair <span class="op">=</span> EmptyPart()
@@ -172,9 +172,24 @@ chair.add(back)
 </div>
 <div id="old-dogs-new-tricks" class="section level2">
 <h2>Old Dogs, New Tricks</h2>
-<p>Adoption of such a new design paradigm into engineering workflow is a significant roadblock. The switching cost of just going from CAD package to CAD package is already high, requiring siginificant time become proficient at the new software. Many mechanical engineers are older (median age in the US is 42.2 <span class="citation">[@noauthor_mechanical_nodate]</span>) and, as an ME in a Silicon Valley tech company, I have witnessed first-hand how difficult it is to get MEs to use new software. It will be difficult to get engineers to detail their design intents not only to their managers but also to a computer–and the latter often requires more coddling.</p>
+<p>Adoption of such a new design paradigm into engineering workflow is a significant roadblock. The switching cost of just going from CAD package to CAD package is already high, requiring siginificant time become proficient at the new software. Many mechanical engineers are older (median age in the US is 42.2 <span class="citation">(“Mechanical Engineers Data USA” <a href="#ref-noauthor_mechanical_nodate">2018</a>)</span>) and, as an ME in a Silicon Valley tech company, I have witnessed first-hand how difficult it is to get MEs to use new software. It will be difficult to get engineers to detail their design intents not only to their managers but also to a computer–and the latter often requires more coddling.</p>
 <p>In addition, there is a question of who deserves the credit for an algorithmic design. Is it the engineers who produced the inputs, the neural network designers, or the end user? Modern companies are already very tight-lipped about their proprietary designs; sharing across company borders may never happen. However, even for internal usage, adoption of ML based design greatly reduces the need to solve previous problems among engineers, speeding up development and decreasing costs.</p>
 
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-noauthor_stl_nodate">
+<p>“STL (File Format) - Wikipedia.” 2018. Accessed February 4. <a href="https://en.wikipedia.org/wiki/STL_(file_format)" class="uri">https://en.wikipedia.org/wiki/STL_(file_format)</a>.</p>
+</div>
+<div id="ref-anderson_end_2008">
+<p>Anderson, Chris. 2008. “The End of Theory: The Data Deluge Makes the Scientific Method Obsolete.” <em>WIRED</em>. <a href="https://www.wired.com/2008/06/pb-theory/" class="uri">https://www.wired.com/2008/06/pb-theory/</a>.</p>
+</div>
+<div id="ref-fuge_collaborative_2014">
+<p>Fuge, Mark Darryl. 2014. “Collaborative Design Informatics : Leveraging Data to Make Design Teams Better.” PhD thesis, Berkeley, CA, 2014.</p>
+</div>
+<div id="ref-noauthor_mechanical_nodate">
+<p>“Mechanical Engineers Data USA.” 2018. Accessed February 4. <a href="https://datausa.io/profile/soc/172141/" class="uri">https://datausa.io/profile/soc/172141/</a>.</p>
 </div>
 </div>
             </section>
