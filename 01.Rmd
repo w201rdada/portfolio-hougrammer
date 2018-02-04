@@ -1,10 +1,4 @@
----
-output:
-  pdf_document: default
-  html_document: default
----
-
-# Using Machine Learning for Mechanical Design {#slug-one}
+# Using Machine Learning for Mechanical Design {#CAD-ML}
 
 ```{r}
 knitr::include_graphics('img/evolution-of-design.jpg')
@@ -12,34 +6,32 @@ knitr::include_graphics('img/evolution-of-design.jpg')
 
 #### Keywords {-}
 
-mechanical engineering, computer aided design (CAD)
+mechanical design, mechanical engineering, computer aided design, CAD, machine learning, classification learning
 
 ## The (Non)Software Engineer
 
-In many ways, mechanical engineers are just glorified jigsaw puzzle solvers.  Often times, our job is to take from a virtually infinite number of puzzle pieces and put them together in a way that is not only functionally useful but also cost-effective.  On the simple side, puzzle pieces can be a modest screw; on the complex, an intricate engine.  If we're lucky, things fit together nicely and no pieces are missing from the box.  But more often than not, we have to craft our own pieces--hence the "design" portion of mechanical design.  And with the advent and proliferation of computer aided design (CAD), pen and paper have become 1s and 0s.  Software is already ubiquitous in the mechanical engineer's workflow recipe.  Perhaps it is time to sprinkle in some machine learning.
+In many ways, mechanical engineers are just glorified jigsaw puzzle solvers.  Often times, our job is to take from a virtually infinite number of puzzle pieces and put them together in a way that is not only functionally useful but also cost-effective.  If we're lucky, things fit together nicely and no pieces are missing from the box.  But more often than not, we have to craft our own pieces--hence the "design" portion of mechanical design.
 
-```{r}
-knitr::include_graphics('img/salt.jpg')
-```
+In any modern company, virtually all mechanical design work is done with computer aided design (CAD) software.  This codification of the physical parts into 1s and 0s generates a lot of data.  In what Anderson calls the "Petabyte Age" [@anderson_end_2008], we are now approaching computing capabilities that can transform this CAD data into something even more exciting.  By labeling mechanical designs, we can train machine learning algorithms to do design work automatically.  If the algorithm notices that every "car" I design needs a component called a "door", maybe it can learn what a "door" is and do the design for me.  Time between concept and production falls precipitously and fewer engineers can handle more intricate tasks.  The implications for business/engineering environments are huge.
 
-## Teaching Old Dogs New Tricks
+## The Paradigm Shift
 
-When I have to design a fixture to help move a box of length L, width W, and height H through over a distance of D, another fellow mechanical engineer has almost surely completed a similar problem already.  If MEs gave each design a classification for use with a supervised learning algorithm, we can start building an algorithm to solve common problems.  Design a door and label it as such and feed it into the algorithm.  When the algorithm has seen enough doors, just start asking for one by name.
-
-* Need to bolt two pieces of sheet metal together?  Let the algorithm select a bolt pattern and the proper size hardware.
-* Need to get water between inlet and outlet manifolds?  Let the algorithm choose the correct tubing and route it for you.
-* Want to design a sleek electric car that is envy of all automotive companies?  Elon Musk beat you to that one, but it doesn't hurt to consult the algorithm for some ideas anyways.
-
-Of course, the real strength in a machine learning algorithm lies not in its ability to recommend previous designs.  The real power in an ML algorithm lies in its ability to learn and adapt to each engineer's tastes and needs.  If you do not like a design that the algorithm outputs, tell it where it went wrong and let it recalculate a solution.  Maybe you wanted a sliding door rather than a hinged one.  Configure your cost function to penalize rotational designs more than translational ones.  In the beginning, the algorithm may be as awkward as someone trying to push square pegs into round holes.  But, as the neural network evolves, not only will it suggest round pegs, it may start pointing out how the hole doesn't even need to be filled.  Algorithm outputs may eventually move away from being simple enough to be described by words like "door" into complex assemblies that can only be described as "that thing that does the thing that I want it to do".
+To be clear, I am not proposing a giant repository of mechanical designs for engineers to pick previously designed parts.  The real strength of a machine learning algorithm lies not in its ability to regurgitate previous inputs, but rather in its ability to learn and adapt to new problems.  If the algorithm outputs a poor design, it can learn a better a solution.  Maybe you wanted a sliding door rather than a hinged one.  Configure your cost function to penalize rotational designs more than translational ones.  The algortihm will start by trying to push square pegs into round holes. But as it evolves, not only will it learn round pegs, it may start pointing out how the hole doesn't even need to be filled.
 
 ```{r}
 knitr::include_graphics('img/dilbert_architect_comic_cad_monkey.jpg')
 ```
 
-The questions of how design communities can "effectively use the design data they generate to help manage their operations and improve their designs" is not a new one [@fuge_collaborative_2014].  Fuge describes machine learning within mechanical engineering design as "Computation Design Synthesis". The field is obviously already being explored but I think the important problem here is one of adoption.  Going to work with many experienced (read older) MEs everyday, it is difficult enough to get them to switch over to Chrome from Internet Explorer, let alone adopt an entirely new design paradigm.
+Of course, my vision for an ML algorithm to suggest completely novel designs may be beyond the capabilities of current or even near-future computing power.  There obviously needs to be an evolution of complexity for the software.  I'm proposing a few levels of functionality:
 
-## The Paradigm Shift
+1. Component suggestion.  The algorithm can suggest previously designed components for use in the current design but the actual implementation is left up to the engineer.  E.g. suggesting bolt sizes for sheet metal.
+2. Geometry suggestion.  The algorithm suggests previously designed components as well as their geometry.  E.g. suggesting a water routing path.
+3. Design suggestion.  The algorithm designs new geometry as a new solution for a specified problem.  E.g. suggesting a fixture to hold a cantilevered weight in place while someone for a plasma chamber maintenance (a real design project of mine)
 
-Getting a machine learning algorithm to a state where it can actually output useful mechanical designs will obviously take some time.  There will be growing pains, as mechanical engineers learn to deal with not only explaining their design intent to their managers but also to a computer--and the latter often requires much more coddling.  However, I believe that the utility in such a system would greatly streamline an ME's workflow.  Can a single engineer eventually design a space ship to Mars?  Maybe it'll eventually be possible--with the digitized knowledge of countless of other aerospace engineers at his or her fingertips: it's just rocket science after all.
+Level 1 suggestion is starting to emerge experimentally in some CAD packages, showing that development has started on what Fuge describes as "Computation Design Synthesis" [@fuge_collaborative_2014].  My description of level 3 suggestion may not have been very elucidating, but it is also the hardest one to encapsulate.  The idea of "design suggestion" can be extended almost ad infinitum.  It is perceivable (albeit in a science-fictionish way) that this algorithm could advance one day to the point where an engineer can simply say, "design me an electric car," and receive drawings for something akin to a Tesla.
 
-That does beg the obvious question: who really deserves the credit for the algorithm's designs?  There may not be an obvious answer and I certainly don't profess to have it.  Moreover, modern companies are already very tight-lipped about their existing designs (a certain fruit immediately comes to mind).  And perhaps this algorithm will never cross chasm between different companies and design firms.  But, it is fun to imagine the type of toys a worldwide engineering collective could dream up.
+## Teaching Old Dogs New Tricks
+
+My present reveries aside, an algorithm for design does face many challenges.  At least in the present day, adoption is a significant roadblock.  Going to work with many experienced (read older) MEs every day, it is difficult enough to get them to switch over to Chrome from Internet Explorer, let alone adopt an entirely new design paradigm.  There will be growing pains, as mechanical engineers learn to deal with not only detailing their design intent to their managers but also to a computer--and the latter often requires much more coddling.
+
+And there is always the question of who really deserves the credit for an algorithm's designs?  Is it the people who produced the inputs or the ones that shaped the algorithm, tuning the neuron weights and network architecture?  Or perhaps it is the end user?  Modern companies are already very tight-lipped about their proprietary designs (a certain fruit immediately comes to mind).  Maybe, automatic design algorithms will never cross chasm between different companies and design firms.  But, it is fun to imagine a world where there is an algorithm containing the knowledge of the worldwide engineering collective.  Would the iPhones in that world would have headphone jacks?
