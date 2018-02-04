@@ -1,4 +1,4 @@
-# Using Machine Learning for Mechanical Design {#CAD-ML}
+# Using Machine Learning for Mechanical Design {#DeepCAD}
 
 ```{r}
 knitr::include_graphics('img/evolution-of-design.jpg')
@@ -6,32 +6,48 @@ knitr::include_graphics('img/evolution-of-design.jpg')
 
 #### Keywords {-}
 
-mechanical design, mechanical engineering, computer aided design, CAD, machine learning, classification learning
+mechanical design, computer aided design, CAD, machine learning, classification learning, neural networks
 
 ## The (Non)Software Engineer
 
-In many ways, mechanical engineers are just glorified jigsaw puzzle solvers.  Often times, our job is to take from a virtually infinite number of puzzle pieces and put them together in a way that is not only functionally useful but also cost-effective.  If we're lucky, things fit together nicely and no pieces are missing from the box.  But more often than not, we have to craft our own pieces--hence the "design" portion of mechanical design.
+In many ways, mechanical engineers are just glorified jigsaw puzzle solvers.  Their job is to take from a virtually infinite number of puzzle pieces and put them together in a functional and cost-effective way--often times having to craft missing pieces from scratch.  However, puzzle pieces all look relatively similar.  It would be great if MEs had access to a repository of known puzzle-piece shapes rather than having to create every one from scratch.
 
-In any modern company, virtually all mechanical design work is done with computer aided design (CAD) software.  This codification of the physical parts into 1s and 0s generates a lot of data.  In what Anderson calls the "Petabyte Age" [@anderson_end_2008], we are now approaching computing capabilities that can transform this CAD data into something even more exciting.  By labeling mechanical designs, we can train machine learning algorithms to do design work automatically.  If the algorithm notices that every "car" I design needs a component called a "door", maybe it can learn what a "door" is and do the design for me.  Time between concept and production falls precipitously and fewer engineers can handle more intricate tasks.  The implications for business/engineering environments are huge.
+In modern companies, virtually all mechanical design work is done with computer aided design (CAD) software.  Thus, physical objects are codified in digital files (see STL for example [@noauthor_stl_nodate]).  In what Anderson calls the "Petabyte Age" [@anderson_end_2008], computing power is approaching the ability to train a neural network to recognize geometries from solid model files and classify them.  If an algorithm notices that every "car" I design needs a component called a "door", it can learn what a "door" is and propose a design for me.  Time between concept and production falls precipitously, with fewer engineers required.  The implications for business/engineering environments are huge.
 
 ## The Paradigm Shift
 
-To be clear, I am not proposing a giant repository of mechanical designs for engineers to pick previously designed parts.  The real strength of a machine learning algorithm lies not in its ability to regurgitate previous inputs, but rather in its ability to learn and adapt to new problems.  If the algorithm outputs a poor design, it can learn a better a solution.  Maybe you wanted a sliding door rather than a hinged one.  Configure your cost function to penalize rotational designs more than translational ones.  The algortihm will start by trying to push square pegs into round holes. But as it evolves, not only will it learn round pegs, it may start pointing out how the hole doesn't even need to be filled.
+To be clear, a machine learning algorithm is not a database of mechanical designs from which engineers select previously designed parts.  The strength of ML lies not in its ability to regurgitate previous inputs, but rather in its ability to solve new problems.  If the algorithm outputs a poor design, it can learn a better a solution.  Once a neural net has seen enough examples of a particular geometry, it could even propose solutions that the engineer hadn't even thought of.  Maybe putting hinges at the top of the door actually makes more sense than putting them on the side (a la gull-wing doors on the Tesla).  Maybe doors aren't even necessary as originally thought.
 
 ```{r}
 knitr::include_graphics('img/dilbert_architect_comic_cad_monkey.jpg')
 ```
 
-Of course, my vision for an ML algorithm to suggest completely novel designs may be beyond the capabilities of current or even near-future computing power.  There obviously needs to be an evolution of complexity for the software.  I'm proposing a few levels of functionality:
+Of course, the neural net's capabilities must grow over time, lest we attempt to build Rome in a day.  I propose some checkpoints along the way:
 
-1. Component suggestion.  The algorithm can suggest previously designed components for use in the current design but the actual implementation is left up to the engineer.  E.g. suggesting bolt sizes for sheet metal.
-2. Geometry suggestion.  The algorithm suggests previously designed components as well as their geometry.  E.g. suggesting a water routing path.
-3. Design suggestion.  The algorithm designs new geometry as a new solution for a specified problem.  E.g. suggesting a fixture to hold a cantilevered weight in place while someone for a plasma chamber maintenance (a real design project of mine)
+1. Component suggestion.  The algorithm suggests previously designed components for use in the current design but actual implementation is left up to the engineer.
+2. Geometry suggestion.  The algorithm suggests previously designed components as well as their geometry and layout in the current design.
+3. Design suggestion.  The algorithm designs new geometry as a new solution for a specified problem.
 
-Level 1 suggestion is starting to emerge experimentally in some CAD packages, showing that development has started on what Fuge describes as "Computation Design Synthesis" [@fuge_collaborative_2014].  My description of level 3 suggestion may not have been very elucidating, but it is also the hardest one to encapsulate.  The idea of "design suggestion" can be extended almost ad infinitum.  It is perceivable (albeit in a science-fictionish way) that this algorithm could advance one day to the point where an engineer can simply say, "design me an electric car," and receive drawings for something akin to a Tesla.
+Level 1 is barely starting to emerge in some CAD packages, showing that development has already started on what Fuge calls "Computation Design Synthesis" [@fuge_collaborative_2014].  The above description of level 3 suggestion may not have been very elucidating, but it is also the hardest one to encapsulate.  The idea of "design suggestion" can be extended almost ad infinitum.  It is perceivable (albeit far-fetched with contemporary technology) that this algorithm could advance one day to the point where an engineer can simply say, "design me an electric car," and receive drawings for something akin to a Tesla.
 
-## Teaching Old Dogs New Tricks
+Perhaps a more realistic goal is this: a paradigm shift from explicitly telling CAD software what to draw (dimensioned sketches followed by extrudes, revolves, and sweeps) to simply giving a top level goal and allowing the software to figure out the details.  This is directly analogous to imperative versus functional programming languages.
 
-My present reveries aside, an algorithm for design does face many challenges.  At least in the present day, adoption is a significant roadblock.  Going to work with many experienced (read older) MEs every day, it is difficult enough to get them to switch over to Chrome from Internet Explorer, let alone adopt an entirely new design paradigm.  There will be growing pains, as mechanical engineers learn to deal with not only detailing their design intent to their managers but also to a computer--and the latter often requires much more coddling.
+Current mechanical design:
+```{python eval=FALSE}
+chair = EmptyPart()
+chair.add(base)
+chair.add(back)
+for _ in range(4): chair.add(leg)
+return chair
+```
 
-And there is always the question of who really deserves the credit for an algorithm's designs?  Is it the people who produced the inputs or the ones that shaped the algorithm, tuning the neuron weights and network architecture?  Or perhaps it is the end user?  Modern companies are already very tight-lipped about their proprietary designs (a certain fruit immediately comes to mind).  Maybe, automatic design algorithms will never cross chasm between different companies and design firms.  But, it is fun to imagine a world where there is an algorithm containing the knowledge of the worldwide engineering collective.  Would the iPhones in that world would have headphone jacks?
+Designing with the new paradigm:
+```{python eval=FALSE}
+return create('chair', options={base:1, back:1, leg:4})
+```
+
+## Old Dogs, New Tricks
+
+Adoption of such a new design paradigm into engineering workflow is a significant roadblock.  The switching cost of just going from CAD package to CAD package is already high, requiring siginificant time become proficient at the new software. Many mechanical engineers are older (median age in the US is 42.2 [@noauthor_mechanical_nodate]) and, as an ME in a Silicon Valley tech company, I have witnessed first-hand how difficult it is to get MEs to use new software.  It will be difficult to get engineers to detail their design intents not only to their managers but also to a computer--and the latter often requires more coddling.
+
+In addition, there is a question of who deserves the credit for an algorithmic design.  Is it the engineers who produced the inputs, the neural network designers, or the end user?  Modern companies are already very tight-lipped about their proprietary designs; sharing across company borders may never happen.  However, even for internal usage, adoption of ML based design greatly reduces the need to solve previous problems among engineers, speeding up development and decreasing costs.
