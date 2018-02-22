@@ -2,7 +2,7 @@ bookdown::gitbook:
   number_sections: TRUE
   dev: svglite
   split_by: chapter
-  split_bib: TRUE
+  split_bib: FALSE
   toc_depth: 2
   config:
     toc:
