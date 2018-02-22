@@ -22,7 +22,7 @@
   
   
 
-<meta name="author" content="Oski Bear">
+<meta name="author" content="David Hou">
 
 
 
@@ -104,10 +104,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome!</a><ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-author"><i class="fa fa-check"></i>About the author</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="DeepCAD.html"><a href="DeepCAD.html"><i class="fa fa-check"></i>Using Machine Learning for Mechanical Design</a><ul>
-<li class="chapter" data-level="" data-path="DeepCAD.html"><a href="DeepCAD.html#the-nonsoftware-engineer"><i class="fa fa-check"></i>The (Non)Software Engineer</a></li>
-<li class="chapter" data-level="" data-path="DeepCAD.html"><a href="DeepCAD.html#the-paradigm-shift"><i class="fa fa-check"></i>The Paradigm Shift</a></li>
-<li class="chapter" data-level="" data-path="DeepCAD.html"><a href="DeepCAD.html#old-dogs-new-tricks"><i class="fa fa-check"></i>Old Dogs, New Tricks</a></li>
+<li class="chapter" data-level="1" data-path="DeepCAD.html"><a href="DeepCAD.html"><i class="fa fa-check"></i><b>1</b> Using Machine Learning for Mechanical Design</a><ul>
+<li class="chapter" data-level="1.1" data-path="DeepCAD.html"><a href="DeepCAD.html#the-nonsoftware-engineer"><i class="fa fa-check"></i><b>1.1</b> The (Non)Software Engineer</a></li>
+<li class="chapter" data-level="1.2" data-path="DeepCAD.html"><a href="DeepCAD.html#the-paradigm-shift"><i class="fa fa-check"></i><b>1.2</b> The Paradigm Shift</a></li>
+<li class="chapter" data-level="1.3" data-path="DeepCAD.html"><a href="DeepCAD.html#old-dogs-new-tricks"><i class="fa fa-check"></i><b>1.3</b> Old Dogs, New Tricks</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/oskibear" target="blank">GitHub</a></li>
@@ -133,19 +133,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
             <section class="normal" id="section-">
 <div id="DeepCAD" class="section level1">
-<h1>Using Machine Learning for Mechanical Design</h1>
+<h1><span class="header-section-number">1</span> Using Machine Learning for Mechanical Design</h1>
 <p><img src="img/evolution-of-design.jpg" width="450" /></p>
 <div id="keywords" class="section level4 unnumbered">
 <h4>Keywords</h4>
 <p>mechanical design, computer aided design, CAD, machine learning, classification learning, neural networks</p>
 </div>
 <div id="the-nonsoftware-engineer" class="section level2">
-<h2>The (Non)Software Engineer</h2>
+<h2><span class="header-section-number">1.1</span> The (Non)Software Engineer</h2>
 <p>In many ways, mechanical engineers are just glorified jigsaw puzzle solvers. Their job is to take from a virtually infinite number of puzzle pieces and put them together in a functional and cost-effective way–often times having to craft missing pieces from scratch. However, many puzzle pieces look relatively similar and it would be great if MEs had access to a repository of known puzzle-piece shapes rather than having to create every one from scratch.</p>
 <p>In modern companies, virtually all mechanical design work is done with computer aided design (CAD) software. Thus, physical objects are codified in digital files (see STL for example <span class="citation">(<em>STL (File Format) - Wikipedia</em> <a href="#ref-noauthor_stl_nodate">2018</a>)</span>). In what Anderson calls the “Petabyte Age” <span class="citation">(Anderson <a href="#ref-anderson_end_2008">2008</a>)</span>, computing power is approaching the ability to train a neural network to recognize geometries from solid model files and classify them. If an algorithm notices that every “car” I design needs a component called a “door”, it can learn what a “door” is and propose a design for me. Time between concept and production falls precipitously, with fewer engineers required. The implications for business/engineering environments are huge.</p>
 </div>
 <div id="the-paradigm-shift" class="section level2">
-<h2>The Paradigm Shift</h2>
+<h2><span class="header-section-number">1.2</span> The Paradigm Shift</h2>
 <p>The proposed machine learning algorithm is not a database of mechanical designs from which engineers select previously designed parts. The strength of ML lies not in its ability to regurgitate previous inputs, but rather in its ability to solve new problems. If the algorithm outputs a poor design, it can learn a better a solution. Once a neural net has seen enough examples of a particular geometry, it can propose solutions that the engineer hadn’t even thought of. Maybe putting hinges at the top of the door actually makes more sense than putting them on the side (a la gull-wing doors on the Tesla); maybe doors aren’t even necessary.</p>
 <p><img src="img/dilbert_architect_comic_cad_monkey.jpg" width="364" /></p>
 <p>Of course, building such a sophisticated learning algorithm will take time, with trial and error. The neural net’s capabilities must grow gradually, lest we attempt to build Rome in a day. I propose some checkpoints along the way:</p>
@@ -166,7 +166,7 @@ chair.add(back)
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">return</span> create(<span class="st">&#39;chair&#39;</span>, options<span class="op">=</span>{base:<span class="dv">1</span>, back:<span class="dv">1</span>, leg:<span class="dv">4</span>})</code></pre></div>
 </div>
 <div id="old-dogs-new-tricks" class="section level2">
-<h2>Old Dogs, New Tricks</h2>
+<h2><span class="header-section-number">1.3</span> Old Dogs, New Tricks</h2>
 <p>Adoption of such a new design paradigm into engineering workflow is a significant roadblock. The switching cost of just going from CAD package to CAD package is already high, requiring significant time to become proficient with the new software. Many mechanical engineers are older–median age in the US is 42.2 <span class="citation">(<em>Mechanical Engineers \Textbar Data USA</em> <a href="#ref-noauthor_mechanical_nodate">2018</a>)</span>–and, as an ME in a Silicon Valley tech company, I have witnessed first-hand how difficult it is to get MEs to use new software. It will be difficult to get engineers to detail their design intents not only to their managers but also to a computer, with the latter often requiring more coddling than the former.</p>
 <p>A new question also emerges: “Who deserves the credit credit for an algorithmic design?” Is it the engineers who produced the inputs, the neural network designers, the end user, or someone else entirely? In addition, modern companies are very tight-lipped regarding their proprietary designs, so sharing across company borders may not happen any time soon. However, even for internal usage, adoption of ML-based mechanical design greatly reduces the need to resolve previous problems with existing solutions, leading to significant decreases in development time and cost.</p>
 
