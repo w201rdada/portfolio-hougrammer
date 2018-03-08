@@ -24,6 +24,6 @@ It is important to point out that the algorithm should suggest majors best suite
 
 It is easy to imagine two diverging paths leading from the adoption of a major recommender algorithm: a dystopian one where machines dictate people's positions in life and an (almost) utopian one where every person finds a truly fulfilling occupation.  The key factor distinguishing the former from the latter is choice.  The proposed algorithms are simply meant to be suggestions and it is ultimately up to students to make informed decisions with the tools available to them.  For many students, major changes are not only inevitable but beneficial.  College should be a time of exploration and many students need to study a variety of subjects to fully realize their future aspirations.  However, it is undeniable that with each semester comes another tuition bill.  Anything that can help optimize and shorten a student's path to graduation should be considered.  At the very least, we can help alleviate analysis paralysis for high school seniors who feel no excitement for any major.
 
-```{r, out.width = "400px"}
+```{r, echo = FALSE, out.width = "400px"}
 knitr::include_graphics('img/every_majors_terrible.png')
 ```
