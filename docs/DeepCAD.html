@@ -147,7 +147,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="the-nonsoftware-engineer" class="section level2">
 <h2><span class="header-section-number">1.1</span> The (Non)Software Engineer</h2>
 <p>In many ways, mechanical engineers are just glorified jigsaw puzzle solvers. Their job is to take from a virtually infinite number of puzzle pieces and put them together in a functional and cost-effective way–often times having to craft missing pieces from scratch. However, many puzzle pieces look relatively similar and it would be great if MEs had access to a repository of known puzzle-piece shapes rather than having to create every one from scratch.</p>
-<p>In modern companies, virtually all mechanical design work is done with computer aided design (CAD) software. Thus, physical objects are codified in digital files (see STL for example <span class="citation">(<em>STL (File Format) - Wikipedia</em> <a href="ML-Majors.html#ref-noauthor_stl_nodate">2018</a>)</span>). In what Anderson calls the “Petabyte Age” <span class="citation">(Anderson <a href="ML-Majors.html#ref-anderson_end_2008">2008</a>)</span>, computing power is approaching the ability to train a neural network to recognize geometries from solid model files and classify them. If an algorithm notices that every “car” I design needs a component called a “door”, it can learn what a “door” is and propose a design for me. Time between concept and production falls precipitously, with fewer engineers required. The implications for business/engineering environments are huge.</p>
+<p>In modern companies, virtually all mechanical design work is done with computer aided design (CAD) software. Thus, physical objects are codified in digital files (see STL for example <span class="citation">(<em>STL (File Format) - Wikipedia</em> <a href="#ref-noauthor_stl_nodate">2018</a>)</span>). In what Anderson calls the “Petabyte Age” <span class="citation">(Anderson <a href="#ref-anderson_end_2008">2008</a>)</span>, computing power is approaching the ability to train a neural network to recognize geometries from solid model files and classify them. If an algorithm notices that every “car” I design needs a component called a “door”, it can learn what a “door” is and propose a design for me. Time between concept and production falls precipitously, with fewer engineers required. The implications for business/engineering environments are huge.</p>
 </div>
 <div id="the-paradigm-shift" class="section level2">
 <h2><span class="header-section-number">1.2</span> The Paradigm Shift</h2>
@@ -159,7 +159,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Geometry suggestion. The algorithm suggests previously designed components as well as their geometry and layout in the current design.</li>
 <li>Design suggestion. The algorithm designs new geometry as a new solution for a specified problem.</li>
 </ol>
-<p>Level 1 is barely starting to emerge in some modern CAD packages, showing that development has already started on what Fuge calls “Computation Design Synthesis” <span class="citation">(Fuge <a href="ML-Majors.html#ref-fuge_collaborative_2014">2014</a>)</span>. The above description of level 3 suggestion may not be very elucidating, but it is also the hardest one to encapsulate. The idea of “design suggestion” can be extended almost ad infinitum. It is perceivable (albeit far-fetched with contemporary technology) that this algorithm could advance one day to the point where an engineer can simply say, “design me an electric car,” and receive drawings for something akin to a Tesla.</p>
+<p>Level 1 is barely starting to emerge in some modern CAD packages, showing that development has already started on what Fuge calls “Computation Design Synthesis” <span class="citation">(Fuge <a href="#ref-fuge_collaborative_2014">2014</a>)</span>. The above description of level 3 suggestion may not be very elucidating, but it is also the hardest one to encapsulate. The idea of “design suggestion” can be extended almost ad infinitum. It is perceivable (albeit far-fetched with contemporary technology) that this algorithm could advance one day to the point where an engineer can simply say, “design me an electric car,” and receive drawings for something akin to a Tesla.</p>
 <p>Perhaps a more realistic goal for advancements in my lifetime is this: a paradigm shift from explicitly telling CAD software what to draw (dimensioned sketches followed by extrudes, revolves, and sweeps) to simply giving a top level goal and allowing the software to figure out the details. This is analogous to imperative versus functional programming languages.</p>
 <p>Current mechanical design:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">chair <span class="op">=</span> EmptyPart()
@@ -172,9 +172,24 @@ chair.add(back)
 </div>
 <div id="old-dogs-new-tricks" class="section level2">
 <h2><span class="header-section-number">1.3</span> Old Dogs, New Tricks</h2>
-<p>Adoption of such a new design paradigm into engineering workflow is a significant roadblock. The switching cost of just going from CAD package to CAD package is already high, requiring significant time to become proficient with the new software. Many mechanical engineers are older–median age in the US is 42.2 <span class="citation">(<em>Mechanical Engineers \Textbar Data USA</em> <a href="ML-Majors.html#ref-noauthor_mechanical_nodate">2018</a>)</span>–and, as an ME in a Silicon Valley tech company, I have witnessed first-hand how difficult it is to get MEs to use new software. It will be difficult to get engineers to detail their design intents not only to their managers but also to a computer, with the latter often requiring more coddling than the former.</p>
+<p>Adoption of such a new design paradigm into engineering workflow is a significant roadblock. The switching cost of just going from CAD package to CAD package is already high, requiring significant time to become proficient with the new software. Many mechanical engineers are older–median age in the US is 42.2 <span class="citation">(<em>Mechanical Engineers \Textbar Data USA</em> <a href="#ref-noauthor_mechanical_nodate">2018</a>)</span>–and, as an ME in a Silicon Valley tech company, I have witnessed first-hand how difficult it is to get MEs to use new software. It will be difficult to get engineers to detail their design intents not only to their managers but also to a computer, with the latter often requiring more coddling than the former.</p>
 <p>A new question also emerges: “Who deserves the credit credit for an algorithmic design?” Is it the engineers who produced the inputs, the neural network designers, the end user, or someone else entirely? In addition, modern companies are very tight-lipped regarding their proprietary designs, so sharing across company borders may not happen any time soon. However, even for internal usage, adoption of ML-based mechanical design greatly reduces the need to resolve previous problems with existing solutions, leading to significant decreases in development time and cost.</p>
 
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-noauthor_stl_nodate">
+<p><em>STL (File Format) - Wikipedia</em>. 2018. Accessed February 4. <a href="https://en.wikipedia.org/wiki/STL_(file_format)" class="uri">https://en.wikipedia.org/wiki/STL_(file_format)</a>.</p>
+</div>
+<div id="ref-anderson_end_2008">
+<p>Anderson, Chris. 2008. <em>The End of Theory: The Data Deluge Makes the Scientific Method Obsolete</em>. <a href="https://www.wired.com/2008/06/pb-theory/" class="uri">https://www.wired.com/2008/06/pb-theory/</a>.</p>
+</div>
+<div id="ref-fuge_collaborative_2014">
+<p>Fuge, Mark Darryl. 2014. “Collaborative Design Informatics : Leveraging Data to Make Design Teams Better.” PhD Thesis, Berkeley, CA, 2014. <a href="https://escholarship.org/uc/item/7jk8z8tz" class="uri">https://escholarship.org/uc/item/7jk8z8tz</a>.</p>
+</div>
+<div id="ref-noauthor_mechanical_nodate">
+<p><em>Mechanical Engineers \Textbar Data USA</em>. 2018. Accessed February 4. <a href="https://datausa.io/profile/soc/172141/" class="uri">https://datausa.io/profile/soc/172141/</a>.</p>
 </div>
 </div>
             </section>
